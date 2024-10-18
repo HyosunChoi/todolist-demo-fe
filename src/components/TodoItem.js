@@ -10,7 +10,12 @@ const TodoItem = ({item, deleteTask}) => {
       const updatedStatus = !isCompleted;
       setIsCompleted(updatedStatus);
 
-      const response = await fetch(`/api/tasks/${item.id}`, {
+          // 경로와 데이터 로그
+      console.log("Request URL:", `/api/tasks/${item.id}`);
+      console.log("Request Body:", { isCompleted: updatedStatus });
+
+      //const response = await fetch(`/api/tasks/${item.id}`, {
+      const response = await fetch(`https://todolist-demo-e6b4fa9776fc.herokuapp.com/api/tasks/${item.id}`, {
         method: "PUT",
         headers : {
           "Content-Type": "application/json",
