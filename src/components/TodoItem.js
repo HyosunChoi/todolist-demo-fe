@@ -8,7 +8,7 @@ const TodoItem = ({item, deleteTask}) => {
   const handleComplete = async() => {
     try {
       //상태변경
-      const updateStatus = await fetch(`/tasks/${id}`, {
+      const updateStatus = await fetch(`/api/tasks/${id}`, {
         method: "PUT",
         headers : {
           "Content-Type": "application/json",
