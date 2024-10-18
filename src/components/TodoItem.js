@@ -15,8 +15,8 @@ const TodoItem = ({item, deleteTask}) => {
         headers : {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({isCompleted: updateStatus}),
-      })
+        body: JSON.stringify({isCompleted: updatedStatus}),
+      });
 
       if(!response.ok) {
         throw new Error("Task update failed");
