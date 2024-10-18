@@ -14,8 +14,8 @@ const TodoItem = ({item, deleteTask}) => {
       console.log("Request URL:", `/api/tasks/${item.id}`);
       console.log("Request Body:", { isCompleted: updatedStatus });
 
-      const response = await fetch(`/api/tasks/${item.id}`, {
-      // const response = await fetch(`https://todolist-demo-e6b4fa9776fc.herokuapp.com/api/tasks/${item.id}`, {
+      // const response = await fetch(`/api/tasks/${item.id}`, {
+      const response = await fetch(`https://todolist-demo-e6b4fa9776fc.herokuapp.com/api/tasks/${item.id}`, {
         method: "PUT",
         headers : {
           "Content-Type": "application/json",
