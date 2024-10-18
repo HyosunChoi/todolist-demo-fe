@@ -6,6 +6,7 @@ const api = axios.create({
     "Content-Type": "application/json",
   },
 });
+console.log("API Base URL:", baseURL);
 /**
  * console.log all requests and responses
  */
