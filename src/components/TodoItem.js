@@ -7,8 +7,10 @@ const TodoItem = ({item, deleteTask}) => {
 
   const handleComplete = async() => {
     try {
-      //상태변경
-      const updateStatus = await fetch(`/api/tasks/${item.id}`, {
+      const updatedStatus = !isCompleted;
+      setIsCompleted(updatedStatus);
+
+      const response = await fetch(`/api/tasks/${item.id}`, {
         method: "PUT",
         headers : {
           "Content-Type": "application/json",
@@ -16,7 +18,7 @@ const TodoItem = ({item, deleteTask}) => {
         body: JSON.stringify({isCompleted: updateStatus}),
       })
 
-      if(!Response.ok) {
+      if(!response.ok) {
         throw new Error("Task update failed");
       }
 
