@@ -6,13 +6,15 @@ const api = axios.create({
     "Content-Type": "application/json",
   },
 });
-console.log("API Base URL:", baseURL);
 /**
  * console.log all requests and responses
  */
 api.interceptors.request.use(
   (request) => {
     console.log("Starting Request", request);
+    console.log("Request URL:", request.url); // 요청 URL 출력
+    console.log("Request Method:", request.method); // 요청 메서드 출력
+    console.log("Request Data:", request.data); // 요청 데이터 출력
     return request;
   },
   function (error) {
